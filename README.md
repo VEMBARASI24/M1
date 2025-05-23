@@ -196,13 +196,13 @@ int main() {
     printf("Percentage = %.2f%%\n", percentage);
 
     if (percentage >= 60) {
-        printf("Division: First\n");
+        printf("Division = First\n");
     } else if (percentage >= 50) {
-        printf("Division: Second\n");
+        printf("Division = Second\n");
     } else if (percentage >= 35) {
-        printf("Division: Pass\n");
+        printf("Division = Pass\n");
     } else {
-        printf("Result: Fail\n");
+        printf("Result = Fail\n");
     }
 
     return 0;
