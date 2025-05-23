@@ -169,32 +169,46 @@ c.	Else if percentage >= 36: Print “Division = Pass”
 ## PROGRAM:
 ```
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
-    int phy,che,ca,total;
-    float per;
-    char div[10];
+int main() {
+    int marks1, marks2, marks3;
+    int total;
+    float percentage;
+    int min_marks = 35;
+    printf("Enter marks for subject 1: ");
+    scanf("%d", &marks1);
 
-   
-    scanf("%d%d%d",&phy,&che,&ca);
-    total = phy+che+ca;
-    per = total/3.0;
-    if (per>=60)
-	 strcpy(div,"First");
-    else if (per<60&&per>=48)
-	    strcpy(div,"Second");
-	else
-	    if (per<48&&per>=36)
-		strcpy(div,"Pass");
-	     else
-		strcpy(div,"Fail");
+    printf("Enter marks for subject 2: ");
+    scanf("%d", &marks2);
 
-      
-       printf("Total Marks = %d\nPercentage = %5.2f\nDivision = %s\n",total,per,div);
-       return 0;
+    printf("Enter marks for subject 3: ");
+    scanf("%d", &marks3);
+
+    if (marks1 < min_marks || marks2 < min_marks || marks3 < min_marks) {
+        printf("Result: Fail (One or more subjects below minimum marks)\n");
+        return 0;
+    }
+
+    total = marks1 + marks2 + marks3;
+    percentage = (total / 300.0) * 100;
+
+    printf("Total marks = %d\n", total);
+    printf("Percentage = %.2f%%\n", percentage);
+
+    if (percentage >= 60) {
+        printf("Division: First\n");
+    } else if (percentage >= 50) {
+        printf("Division: Second\n");
+    } else if (percentage >= 35) {
+        printf("Division: Pass\n");
+    } else {
+        printf("Result: Fail\n");
+    }
+
+    return 0;
 }
+
+
 ```
 ## OUTPUT:
 
